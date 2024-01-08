@@ -1,9 +1,6 @@
 <script>
 while () {
-          document.addEventListener('keydown', function(event) {
-             if (event.key === ' ') { // スペースキーが押された場合
-                 event.preventDefault(); // デフォルトのスクロールを無効化
- 
+
                  // ランダムな英数字の生成
                  const randomAnchor = Math.random().toString(36).substr(2, 6);
  
@@ -17,5 +14,5 @@ while () {
                  // ページの遷移
                  window.location.href = newURL;
              }
-}
+
 </script>
