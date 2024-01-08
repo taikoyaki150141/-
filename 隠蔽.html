@@ -1,0 +1,21 @@
+<script>
+while () {
+          document.addEventListener('keydown', function(event) {
+             if (event.key === ' ') { // スペースキーが押された場合
+                 event.preventDefault(); // デフォルトのスクロールを無効化
+ 
+                 // ランダムな英数字の生成
+                 const randomAnchor = Math.random().toString(36).substr(2, 6);
+ 
+                 // アンカーを新しいランダムな値に置き換える
+                 anchor = randomAnchor;
+ 
+                 // 現在のURLにアンカーを追加
+                 const currentURL = window.location.href;
+                 const newURL = currentURL.replace(/#.*/, '') + '#' + anchor;
+ 
+                 // ページの遷移
+                 window.location.href = newURL;
+             }
+}
+</script>
