@@ -1,5 +1,6 @@
 
 <style>
+
     @keyframes flip {
         0% {
             transform: rotateY(0deg);
@@ -22,7 +23,9 @@
 
 
     }
-
+body {
+          background: #ddf5ff;
+        }
     .btn {
         padding: 10px 20px;
         background: yellow;
@@ -42,7 +45,7 @@
 
 </div>
  <br> <br> 
- <button onclick="flipCoins(3)" style="font-size:100%" class="btn">Flip Coins</button>
+ <button onclick="flipCoins(3)" style="font-size:100%" class="btn">コインを投げる</button>
 <script> 
 function flipCoins(numCoins) {
     var resultContainer = document.getElementById('result');
@@ -54,9 +57,9 @@ function flipCoins(numCoins) {
         coin.classList.add('coin');
 
         if (result === 1) {
-            coin.src = 'https://cdn-ak.f.st-hatena.com/images/fotolife/d/dskevin/20230108/20230108190854.jpg';
+            coin.src = 'https://1.bp.blogspot.com/-sJcPVpLb4Rs/X5OcZakVvoI/AAAAAAABb9s/UxGsx-fLAOUUzuyn0TVQyjxPYcNm8xiaACNcBGAsYHQ/s556/money_coin_america_10_obverse.png';
         } else {
-            coin.src = 'https://cdn-ak.f.st-hatena.com/images/fotolife/d/dskevin/20230108/20230108190858.jpg';
+            coin.src = 'https://1.bp.blogspot.com/-KgdHeAhrPvg/X5OcZdw_FQI/AAAAAAABb9w/qavfhaueaiAFIgaB1S6DlccmyH6IiCeBgCNcBGAsYHQ/s556/money_coin_america_10_reverse.png';
         }
 
         resultContainer.appendChild(coin);
