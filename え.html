@@ -1,58 +1,45 @@
 <style>
-    #result {
-        display: flex;
-        flex-wrap: wrap;
+    @keyframes flip {
+        0% {
+            transform: rotateY(0deg);
+        }
+
+        50% {
+            transform: rotateY(180deg);
+        }
+
+        100% {
+            transform: rotateY(0deg);
+        }
     }
 
     .coin {
         width: 100px;
-        /* Adjust the width of the image as needed */
         height: 100px;
-        /* Adjust the height of the image as needed */
         margin-right: 10px;
-        /* Adjust the spacing between coins as needed */
+      animation: flip 0.5s ease-in-out 0s infinite, flip 1s ease-in-out 0.5s 1 normal forwards;
+
+
     }
-    
+
     .btn {
-          padding: 10px 20px;
-          background: yellow;
-          color: #111111;
-          border-bottom: solid 5px gray;
-          border-radius: 4px;
-          }
-.btn:active {
-          -webkit-transform: translateY(5px);
-          transform: translateY(5px);
-          border-bottom: none;
-          }
-
-        #container {
-          margin: 0 auto;
-        }
-</style>
-
-
-<div id="result"></div>
-<br>
-<br>
-<button onclick="flipCoins(3)" style="font-size:100%" class="btn">Flip Coins</button>
-<script>
-    function flipCoins(numCoins) {
-        var resultContainer = document.getElementById('result');
-        resultContainer.innerHTML = '';
-
-        for (var i = 0; i < numCoins; i++) {
-            var result = Math.floor(Math.random() * 2) + 1;
-            var coin = document.createElement('img');
-            coin.classList.add('coin');
-
-            if (result === 1) {
-                coin.src = 'https://cdn-ak.f.st-hatena.com/images/fotolife/d/dskevin/20230108/20230108190854.jpg'; // Image file path for heads
-            } else {
-                coin.src = 'https://cdn-ak.f.st-hatena.com/images/fotolife/d/dskevin/20230108/20230108190858.jpg'; // Image file path for tails
-            }
-
-            resultContainer.appendChild(coin);
-        }
+        padding: 10px 20px;
+        background: yellow;
+        color: #111111;
+        border-bottom: solid 5px gray;
+        border-radius: 4px;
     }
-</script>
+
+    .btn:active {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+        border-bottom: none;
+    }
+
+    #container {
+        margin: 0 auto;
+    }
+</style>
+<div id="result"></div> <br> <br> <button onclick="flipCoins(3)" style="font-size:100%" class="btn">Flip Coins</button>
+<script> function flipCoins(numCoins) { var resultContainer = document.getElementById('result'); resultContainer.innerHTML = ''; for (var i = 0; i < numCoins; i++) { var result = Math.floor(Math.random() * 2) + 1; var coin = document.createElement('img'); coin.classList.add('coin'); if (result === 1) { coin.src = 'https://cdn-ak.f.st-hatena.com/images/fotolife/d/dskevin/20230108/20230108190854.jpg';  } else { coin.src = 'https://cdn-ak.f.st-hatena.com/images/fotolife/d/dskevin/20230108/20230108190858.jpg'; 
+ } resultContainer.appendChild(coin); } } </script>
